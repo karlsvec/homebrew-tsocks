@@ -15,7 +15,7 @@ class Tsocks < Formula
     inreplace("tsocks") { |bin| bin.change_make_var! "LIBDIR", lib }
  
     system "make"
-    system "make DESTDIR=#{prefix} install"
+    system "make install"
  
     etc.install "tsocks.conf.simple.example" => "tsocks.conf" unless config_file.exist?
   end
