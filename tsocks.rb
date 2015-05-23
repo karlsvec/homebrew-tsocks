@@ -10,7 +10,7 @@ class Tsocks < Formula
  
   def install
     system "autoconf", "-v"
-    system "./configure", "--prefix=#{prefix}", "--disable-debug", "--disable-dependency-tracking", "--with-conf=#{config_file}"
+    system "./configure", "--prefix=#{prefix}", "--libdir=#{prefix}/lib", "--disable-debug", "--disable-dependency-tracking", "--with-conf=#{config_file}"
  
     inreplace("tsocks") { |bin| bin.change_make_var! "LIBDIR", lib }
  
